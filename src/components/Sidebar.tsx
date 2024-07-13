@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { Layout, Menu as AntdMenu } from "antd";
+
 import {
   RightOutlined,
   LeftOutlined,
@@ -28,37 +29,31 @@ export const Sidebar = () => {
       label: "Dashboards",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.dashboards,
-      onClick: () => navigate(ROUTES.dashboards),
       children: [
         {
           label: "Maintenance Menu",
           icon: <AppstoreOutlined className="!text-xl !text-white" />,
           key: ROUTES.maintenanceMenu,
-          onClick: () => navigate(ROUTES.maintenanceMenu),
         },
         {
           label: "Product Management",
           icon: <AppstoreOutlined className="!text-xl !text-white" />,
           key: ROUTES.productManagement,
-          onClick: () => navigate(ROUTES.productManagement),
         },
         {
           label: "Purchasing",
           icon: <AppstoreOutlined className="!text-xl !text-white" />,
           key: ROUTES.purchasing,
-          onClick: () => navigate(ROUTES.purchasing),
         },
         {
           label: "Reporting",
           icon: <AppstoreOutlined className="!text-xl !text-white" />,
           key: ROUTES.reporting,
-          onClick: () => navigate(ROUTES.reporting),
         },
         {
           label: "EQSI",
           icon: <AppstoreOutlined className="!text-xl !text-white" />,
           key: ROUTES.eqsi,
-          onClick: () => navigate(ROUTES.eqsi),
         },
       ],
     },
@@ -69,19 +64,16 @@ export const Sidebar = () => {
       label: "Customers",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.customers,
-      onClick: () => navigate(ROUTES.customers),
     },
     {
       label: "Suppliers",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.suppliers,
-      onClick: () => navigate(ROUTES.suppliers),
     },
     {
       label: "Users / roles",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.userRoles,
-      onClick: () => navigate(ROUTES.userRoles),
     },
   ];
 
@@ -90,21 +82,22 @@ export const Sidebar = () => {
       label: "AI Tool",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.aiTool,
-      onClick: () => navigate(ROUTES.aiTool),
     },
     {
       label: "EQS Link",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.eqsLink,
-      onClick: () => navigate(ROUTES.eqsLink),
     },
     {
       label: "A N Other",
       icon: <AppstoreOutlined className="!text-xl !text-white" />,
       key: ROUTES.anOther,
-      onClick: () => navigate(ROUTES.anOther),
     },
   ];
+
+  const handleMenuClick = ({ key }: { key: string }) => {
+    navigate(key);
+  };
 
   return (
     <Layout.Sider
@@ -140,6 +133,7 @@ export const Sidebar = () => {
             inlineIndent={16}
             items={dashboardItems}
             defaultSelectedKeys={[pathname]}
+            onClick={handleMenuClick}
           />
         </div>
 
@@ -152,6 +146,7 @@ export const Sidebar = () => {
             inlineIndent={16}
             items={pagesItems}
             defaultSelectedKeys={[pathname]}
+            onClick={handleMenuClick}
           />
         </div>
 
@@ -164,6 +159,7 @@ export const Sidebar = () => {
             inlineIndent={16}
             items={quickLinksItems}
             defaultSelectedKeys={[pathname]}
+            onClick={handleMenuClick}
           />
         </div>
       </div>
