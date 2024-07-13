@@ -44,3 +44,7 @@
 .ant-layout-sider-trigger {
   background-color: #343439 !important;
 }
+
+.ant-input::placeholder {
+  color: #6a753d !important;
+}
