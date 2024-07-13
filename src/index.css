@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ant-menu-submenu {
+  background-color: #343439 !important;
+  color: white !important;
+}
+
+.ant-menu-submenu-title {
+  margin-inline: 0 !important;
+  margin-block: 0 !important;
+  width: 100% !important;
+}
+
+.ant-menu-submenu-title:hover {
+  background-color: #e73875 !important;
+}
+
+.ant-menu-title-content {
+  color: white !important;
+}
+
+.ant-menu-submenu-arrow {
+  color: white !important;
+}
+
+.ant-menu {
+  background-color: #343439 !important;
+}
+
+.ant-menu-item {
+  background-color: #343439 !important;
+  color: white !important;
+  margin-inline: 0 !important;
+  margin-block: 0 !important;
+  width: 100% !important;
+}
+
+.ant-menu-item:hover {
+  background-color: #e73875 !important;
+}
+
+.ant-layout-sider-trigger {
+  background-color: #343439 !important;
+}
