@@ -33,7 +33,7 @@ export const Sidebar = () => {
         {
           label: "Maintenance Menu",
           icon: <AppstoreOutlined className="!text-xl !text-white" />,
-          key: ROUTES.maintenanceMenu,
+          key: ROUTES.maintenance,
         },
         {
           label: "Product Management",

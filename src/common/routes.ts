@@ -3,7 +3,7 @@ export const ROUTES = {
   settings: "/settings",
 
   dashboards: "/dashboards",
-  maintenanceMenu: "/dashboards/maintenance-menu",
+  maintenance: "/dashboards/maintenance",
   productManagement: "/dashboards/product-management",
   purchasing: "/purchasing",
   reporting: "/reporting",
