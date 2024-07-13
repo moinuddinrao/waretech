@@ -5,9 +5,9 @@ export const ROUTES = {
   dashboards: "/dashboards",
   maintenance: "/dashboards/maintenance",
   productManagement: "/dashboards/product-management",
-  purchasing: "/purchasing",
-  reporting: "/reporting",
-  eqsi: "/eqsi",
+  purchasing: "/dashboards/purchasing",
+  reporting: "/dashboards/reporting",
+  eqsi: "/dashboards/eqsi",
 
   customers: "/customers",
   suppliers: "/suppliers",
