@@ -1,11 +1,19 @@
-import { App as AntdApp } from "antd";
+import { App as AntdApp, ConfigProvider } from "antd";
 
 import { Router } from "./Router";
 
 function App() {
   return (
     <AntdApp>
-      <Router />
+      <ConfigProvider
+        theme={{
+          token: {
+            borderRadius: 0,
+          },
+        }}
+      >
+        <Router />
+      </ConfigProvider>
     </AntdApp>
   );
 }
