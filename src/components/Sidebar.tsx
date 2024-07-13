@@ -21,7 +21,6 @@ export const Sidebar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  console.log(pathname);
   const [collapsed, setCollapsed] = useState(false);
 
   const dashboardItems: MenuItem[] = [
