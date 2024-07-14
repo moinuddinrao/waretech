@@ -102,9 +102,9 @@ export const Sidebar = () => {
   return (
     <Layout.Sider
       theme="light"
-      width={250}
+      width={collapsed ? 75 : 250}
       breakpoint="lg"
-      className="!sticky !top-0 !left-0 !h-screen !max-h-screen !shadow-lg !bg-dark"
+      className="!z-20 !fixed !top-0 !left-0 !h-screen !max-h-screen !shadow-lg !bg-dark"
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
