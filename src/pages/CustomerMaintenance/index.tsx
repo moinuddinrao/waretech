@@ -6,6 +6,8 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 
+import { Overview } from "./Overview";
+
 import { PrimaryButton } from "@/components/Buttons";
 
 import { styles } from "@/styles";
@@ -86,7 +88,7 @@ const tabsItems: TabsProps["items"] = [
   {
     key: "1",
     label: "Overview",
-    children: "Content of Overview",
+    children: <Overview />,
   },
   {
     key: "2",
