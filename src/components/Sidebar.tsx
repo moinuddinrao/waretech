@@ -103,7 +103,8 @@ export const Sidebar = () => {
     <Layout.Sider
       theme="light"
       width={250}
-      className="!sticky !top-0 !left-0 !h-screen !shadow-lg !bg-dark"
+      breakpoint="lg"
+      className="!z-20 !absolute md:!sticky !top-0 !left-0 !h-screen !max-h-screen !shadow-lg !bg-dark"
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
@@ -115,9 +116,9 @@ export const Sidebar = () => {
         )
       }
     >
-      <div className="w-full h-full flex flex-col gap-3 p-3">
-        <div className="flex justify-center my-1 gap-3">
-          <Logo width={30} />
+      <div className="w-full h-full flex flex-col gap-1 lg:gap-3 p-1 lg:p-3">
+        <div className="flex justify-center my-1 gap-2 lg:gap-3">
+          <Logo className="!w-6 lg:!w-8" />
           {!collapsed && (
             <h3 className={`${styles.heading3} text-white`}>Waretech</h3>
           )}
