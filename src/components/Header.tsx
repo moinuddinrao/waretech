@@ -10,7 +10,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <Layout.Header className="!z-10 !sticky !top-0 !w-full h-[10vh] p-0 flex justify-between items-center bg-light">
+    <Layout.Header className="!z-10 !sticky !top-0 !w-full h-[7vh] p-0 flex justify-between items-center bg-light">
       <BreadCrumb />
       <div className="flex gap-5 items-center">
         <Input
