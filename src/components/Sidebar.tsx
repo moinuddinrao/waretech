@@ -104,7 +104,7 @@ export const Sidebar = () => {
       theme="light"
       width={250}
       breakpoint="lg"
-      className="!z-20 !absolute md:!sticky !top-0 !left-0 !h-screen !max-h-screen !shadow-lg !bg-dark"
+      className="!sticky !top-0 !left-0 !h-screen !max-h-screen !shadow-lg !bg-dark"
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
