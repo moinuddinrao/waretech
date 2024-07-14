@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { Layout, Menu as AntdMenu } from "antd";
+import { Layout, Menu as AntdMenu, Image } from "antd";
 
 import {
   RightOutlined,
   LeftOutlined,
   AppstoreOutlined,
+  DownOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 
 import { Logo } from "@/components/Logo";
 
 import { ROUTES } from "@/common/routes";
+
+import profile from "@/assets/images/profile.png";
 
 import { styles } from "@/styles";
 
@@ -124,6 +127,27 @@ export const Sidebar = () => {
           <Logo className="!w-6 lg:!w-8" />
           {!collapsed && (
             <h3 className={`${styles.heading3} text-white`}>Waretech</h3>
+          )}
+        </div>
+
+        <hr className={styles.line} />
+
+        <div
+          className={`flex items-center my-1 gap-2 lg:gap-3 ${
+            collapsed ? "justify-center" : "justify-start"
+          }`}
+        >
+          <Image
+            src={profile}
+            alt="Profile"
+            preview={false}
+            className="rounded-full"
+          />
+          {!collapsed && (
+            <div className="w-full flex justify-between gap-2 lg:gap-3">
+              <p className="text-white">Tayah Betambeau</p>
+              <DownOutlined className="!text-white !text-xs mr-4" />
+            </div>
           )}
         </div>
 
