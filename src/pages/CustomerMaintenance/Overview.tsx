@@ -90,17 +90,17 @@ export const Overview = () => {
   // Update form values when data is fetched
   useEffect(() => {
     if (data) {
-      const customer = data.ReactCustomer[0];
+      const customer = data?.ReactCustomer?.[0];
       form.setFieldsValue({
-        customerName: customer.NAME,
-        customerAccountID: customer.ACCNO,
+        customerName: customer?.NAME,
+        customerAccountID: customer?.ACCNO,
         customerTermsGroup: "",
         paymentTerms: "",
         creditLimit: customer["CREDIT.LIMIT"],
-        customerRep: customer.REP,
+        customerRep: customer?.REP,
         contactName: "",
-        contactNumber: customer.PHONE,
-        address: customer.ADDRESS.join(", "),
+        contactNumber: customer?.PHONE,
+        address: customer?.ADDRESS.join(", "),
         postcode: "",
       });
     }
