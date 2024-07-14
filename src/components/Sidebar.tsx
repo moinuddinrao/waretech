@@ -22,7 +22,7 @@ export const Sidebar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const dashboardItems: MenuItem[] = [
     {
