@@ -117,9 +117,9 @@ export const CustomerMaintenance = () => {
     <div className={styles.section}>
       <h1 className={styles.heading1}>Customer Maintenance</h1>
 
-      <div className="flex gap-5">
+      <div className="flex flex-col lg:flex-row gap-5">
         {/* Left Sidebar */}
-        <div className={`w-[25%] ${styles.box}`}>
+        <div className={`w-full lg:w-1/3 ${styles.box}`}>
           {/* Company Info */}
           <div className="flex gap-2">
             <div className="w-10 h-10 bg-black text-white text-2xl leading-10 font-medium text-center rounded-md">
@@ -192,9 +192,9 @@ export const CustomerMaintenance = () => {
         </div>
 
         {/* Main Content */}
-        <div className={`w-[75%] ${styles.section}`}>
+        <div className={`w-full lg:w-2/3 ${styles.section}`}>
           {/* Search and Actions */}
-          <div className="flex gap-5">
+          <div className="flex flex-col xs:flex-row gap-3 xs:gap-5">
             <Input
               placeholder="Search Maintenance..."
               prefix={<SearchOutlined />}
@@ -203,11 +203,15 @@ export const CustomerMaintenance = () => {
             <PrimaryButton
               type="primary"
               icon={<DownloadOutlined />}
-              className="!bg-opacity-20 !text-[#3A5BFF]"
+              className="!bg-opacity-20 !text-[#3A5BFF] w-full xs:w-fit"
             >
               Export
             </PrimaryButton>
-            <PrimaryButton type="primary" icon={<PlusOutlined />}>
+            <PrimaryButton
+              type="primary"
+              icon={<PlusOutlined />}
+              className="w-full xs:w-fit"
+            >
               Add New
             </PrimaryButton>
           </div>
