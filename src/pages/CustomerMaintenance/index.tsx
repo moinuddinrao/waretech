@@ -14,6 +14,7 @@ import { styles } from "@/styles";
 
 // Define the CardProps interface
 interface CardProps {
+  key: string;
   title: string;
   subTitle: string;
   value: string;
@@ -24,6 +25,7 @@ interface CardProps {
 // Define the cards data
 const cardsItems: CardProps[] = [
   {
+    key: "totalCustomersWeek",
     title: "Total Customers",
     subTitle: "Week comparison",
     value: "1.345",
@@ -31,6 +33,7 @@ const cardsItems: CardProps[] = [
     color: "#5E81F4",
   },
   {
+    key: "totalSuppliersMonth",
     title: "Total Suppliers",
     subTitle: "Month comparison",
     value: "3.82",
@@ -38,6 +41,7 @@ const cardsItems: CardProps[] = [
     color: "#F4BE5E",
   },
   {
+    key: "totalUsersWeek",
     title: "Total Users",
     subTitle: "Week comparison",
     value: "£4690",
@@ -45,6 +49,7 @@ const cardsItems: CardProps[] = [
     color: "#FF808B",
   },
   {
+    key: "totalUsersMonth",
     title: "Total Users",
     subTitle: "Month comparison",
     value: "£3820",
@@ -140,7 +145,7 @@ export const CustomerMaintenance = () => {
           <div className="flex flex-col gap-2">
             {cardsItems.map((item) => (
               <Card
-                key={item.title}
+                key={item.key}
                 className="w-full p-3 border-none rounded-lg bg-card"
               >
                 <div className="flex justify-between items-center">
