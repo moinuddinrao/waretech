@@ -1,5 +1,10 @@
+import { useEffect } from "react";
 import { Form, Input, Image } from "antd";
 import { DownloadOutlined, SaveOutlined } from "@ant-design/icons";
+
+import { useQuery } from "@tanstack/react-query";
+
+import { getCustomer } from "@/api/customer.api";
 
 import { SecondaryButton } from "@/components/Buttons";
 
@@ -68,20 +73,6 @@ const overviewItems: OverviewProps[] = [
   },
 ];
 
-// Define the initial values for the form fields
-const initialValues = {
-  customerName: "Renewa Ltd",
-  customerAccountID: "456567",
-  customerTermsGroup: "BUY1",
-  paymentTerms: "45 Days",
-  creditLimit: "3 Days",
-  customerRep: "Steve H",
-  contactName: "EcoFlow",
-  contactNumber: "0333 455 6777",
-  address: "123 Any Road, London",
-  postcode: "L3 4TH",
-};
-
 // Define the statistics data
 const statistics = [
   { label: "Total Orders YTD", value: 40 },
@@ -93,10 +84,39 @@ const statistics = [
 export const Overview = () => {
   const [form] = Form.useForm();
 
+  // Fetch customer data using react-query
+  const { isLoading, isFetching, data } = useQuery(getCustomer());
+
+  // Update form values when data is fetched
+  useEffect(() => {
+    if (data) {
+      const customer = data.ReactCustomer[0];
+      form.setFieldsValue({
+        customerName: customer.NAME,
+        customerAccountID: customer.ACCNO,
+        customerTermsGroup: "",
+        paymentTerms: "",
+        creditLimit: customer["CREDIT.LIMIT"],
+        customerRep: customer.REP,
+        contactName: "",
+        contactNumber: customer.PHONE,
+        address: customer.ADDRESS.join(", "),
+        postcode: "",
+      });
+    }
+  }, [data, form]);
+
+  // Display loading state while data is being fetched
+  if (isLoading || isFetching) {
+    return <div>Loading...</div>;
+  }
+
   // Handle the form submission
   const handleSubmit = async () => {
     // Validate the form fields
     await form.validateFields();
+
+    // Perform the form submission
   };
 
   // Helper function to render form items
@@ -127,7 +147,6 @@ export const Overview = () => {
       name="overview"
       size="small"
       onFinish={handleSubmit}
-      initialValues={initialValues}
       className="flex flex-col gap-3 lg:gap-5 p-0 lg:p-5"
     >
       <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
@@ -185,6 +204,7 @@ export const Overview = () => {
           type="default"
           icon={<SaveOutlined />}
           className="rounded-md w-full xs:w-fit"
+          htmlType="submit"
         >
           Save
         </SecondaryButton>
