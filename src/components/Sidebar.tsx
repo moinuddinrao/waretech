@@ -103,7 +103,6 @@ export const Sidebar = () => {
     <Layout.Sider
       theme="light"
       width={collapsed ? 75 : 250}
-      breakpoint="lg"
       className="!z-20 !fixed !top-0 !left-0 !h-screen !max-h-screen !shadow-lg !bg-dark"
       collapsible
       collapsed={collapsed}
