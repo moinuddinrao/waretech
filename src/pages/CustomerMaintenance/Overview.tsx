@@ -106,13 +106,18 @@ export const Overview = () => {
         key={item.name}
         name={item.name}
         label={
-          <label className={`${styles.label} !w-60 text-left`}>
+          <label
+            className={`${styles.label} !w-40 md:!w-44 xl:!w-60 text-left`}
+          >
             {item.label}
           </label>
         }
         className="m-0 [&_label]:after:!content-[none]"
       >
-        <Input className="!w-fit" placeholder={item.placeholder} />
+        <Input
+          className="!w-full lg:!w-40 xl:!w-60"
+          placeholder={item.placeholder}
+        />
       </Form.Item>
     ));
 
@@ -123,11 +128,11 @@ export const Overview = () => {
       size="small"
       onFinish={handleSubmit}
       initialValues={initialValues}
-      className="flex flex-col gap-5 p-5"
+      className="flex flex-col gap-3 lg:gap-5 p-0 lg:p-5"
     >
-      <div className="flex justify-between gap-10">
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
         {/* Form Fields */}
-        <div className="flex flex-col gap-5">
+        <div className="w-full lg:w-[70%] flex flex-col gap-5">
           {/* Primary Details */}
           <div className="flex flex-col gap-5">
             <h5 className={styles.heading5}>Primary Details</h5>
@@ -148,7 +153,7 @@ export const Overview = () => {
         </div>
 
         {/* Overview Details */}
-        <div className="w-[30%] flex flex-col items-center gap-5">
+        <div className="w-full lg:w-[30%] flex flex-col items-center gap-5">
           <div className="flex p-2 border-[1px] border-dashed border-gray">
             <Image
               src={renewa}
@@ -159,10 +164,15 @@ export const Overview = () => {
             />
           </div>
           {/* Statistics Card */}
-          <div className="flex flex-col gap-5 p-5 rounded-lg border-2 border-line">
+          <div className="w-full lg:w-fit flex flex-col gap-3 lg:gap-5 p-3 lg:p-5 rounded-lg border-2 border-line">
             {statistics.map((stat, index) => (
-              <div key={index} className="grid grid-cols-3 gap-5">
-                <p className="text-lightText col-span-2">{stat.label}</p>
+              <div
+                key={index}
+                className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 gap-3"
+              >
+                <p className="text-lightText col-span-1 xl:col-span-2 truncate">
+                  {stat.label}
+                </p>
                 <p className="font-medium text-gray">{stat.value}</p>
               </div>
             ))}
@@ -170,22 +180,22 @@ export const Overview = () => {
         </div>
       </div>
 
-      <div className="flex justify-end gap-2">
+      <div className="flex flex-col xs:flex-row xs:justify-end gap-3">
         <SecondaryButton
           type="default"
           icon={<SaveOutlined />}
-          className="rounded-md"
+          className="rounded-md w-full xs:w-fit"
         >
           Save
         </SecondaryButton>
         <SecondaryButton
           type="default"
           icon={<DownloadOutlined />}
-          className="rounded-md"
+          className="rounded-md w-full xs:w-fit"
         >
           Download
         </SecondaryButton>
-        <SecondaryButton type="default" className="rounded-md">
+        <SecondaryButton type="default" className="rounded-md w-full xs:w-fit">
           Cancel
         </SecondaryButton>
       </div>
