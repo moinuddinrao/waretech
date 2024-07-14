@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { Layout, Avatar, Input } from "antd";
+import { Layout, Input } from "antd";
 import { UserOutlined, SettingFilled, BellFilled } from "@ant-design/icons";
 
 import { ROUTES } from "@/common/routes";
@@ -10,19 +10,22 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <Layout.Header className="!z-10 !sticky !top-0 !w-full h-[7vh] p-0 flex justify-between items-center bg-light">
+    <Layout.Header className="!z-10 !sticky !top-0 !w-full h-[12vh] lg:h-[7vh] p-0 flex flex-col lg:flex-row lg:justify-between lg:items-center bg-light">
       <BreadCrumb />
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-2 lg:gap-5 items-center">
         <Input
+          size="small"
           placeholder="Search here"
-          className="w-40 !border-green !rounded-lg !bg-transparent"
+          className="w-full !border-green !rounded-lg !bg-transparent"
         />
-        <Avatar
-          icon={<UserOutlined />}
-          className="shadow-lg bg-green hover:bg-blue w-5 h-5 cursor-pointer"
+        <UserOutlined
+          className="!text-base shadow-lg text-white bg-green hover:bg-blue p-[3px] rounded-full cursor-pointer"
           onClick={() => navigate(ROUTES.profile)}
         />
-        <SettingFilled className="text-xl text-green hover:text-blue cursor-pointer" />
+        <SettingFilled
+          className="text-xl text-green hover:text-blue cursor-pointer"
+          onClick={() => navigate(ROUTES.settings)}
+        />
         <BellFilled className="text-xl text-green hover:text-blue cursor-pointer" />
       </div>
     </Layout.Header>

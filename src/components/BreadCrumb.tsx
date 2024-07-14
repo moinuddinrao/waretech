@@ -43,5 +43,5 @@ export const BreadCrumb = () => {
     }),
   ];
 
-  return <Breadcrumb separator="/" items={items} className="my-5" />;
+  return <Breadcrumb separator="/" items={items} className="my-3 lg:my-5" />;
 };
