@@ -18,82 +18,82 @@ import { styles } from "@/styles";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
+const dashboardItems: MenuItem[] = [
+  {
+    label: "Dashboards",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.dashboards,
+    children: [
+      {
+        label: "Maintenance Menu",
+        icon: <AppstoreOutlined className="!text-xl !text-white" />,
+        key: ROUTES.maintenance,
+      },
+      {
+        label: "Product Management",
+        icon: <AppstoreOutlined className="!text-xl !text-white" />,
+        key: ROUTES.productManagement,
+      },
+      {
+        label: "Purchasing",
+        icon: <AppstoreOutlined className="!text-xl !text-white" />,
+        key: ROUTES.purchasing,
+      },
+      {
+        label: "Reporting",
+        icon: <AppstoreOutlined className="!text-xl !text-white" />,
+        key: ROUTES.reporting,
+      },
+      {
+        label: "EQSI",
+        icon: <AppstoreOutlined className="!text-xl !text-white" />,
+        key: ROUTES.eqsi,
+      },
+    ],
+  },
+];
+
+const pagesItems: MenuItem[] = [
+  {
+    label: "Customers",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.customers,
+  },
+  {
+    label: "Suppliers",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.suppliers,
+  },
+  {
+    label: "Users / roles",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.userRoles,
+  },
+];
+
+const quickLinksItems: MenuItem[] = [
+  {
+    label: "AI Tool",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.aiTool,
+  },
+  {
+    label: "EQS Link",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.eqsLink,
+  },
+  {
+    label: "A N Other",
+    icon: <AppstoreOutlined className="!text-xl !text-white" />,
+    key: ROUTES.anOther,
+  },
+];
+
 export const Sidebar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const [collapsed, setCollapsed] = useState(true);
-
-  const dashboardItems: MenuItem[] = [
-    {
-      label: "Dashboards",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.dashboards,
-      children: [
-        {
-          label: "Maintenance Menu",
-          icon: <AppstoreOutlined className="!text-xl !text-white" />,
-          key: ROUTES.maintenance,
-        },
-        {
-          label: "Product Management",
-          icon: <AppstoreOutlined className="!text-xl !text-white" />,
-          key: ROUTES.productManagement,
-        },
-        {
-          label: "Purchasing",
-          icon: <AppstoreOutlined className="!text-xl !text-white" />,
-          key: ROUTES.purchasing,
-        },
-        {
-          label: "Reporting",
-          icon: <AppstoreOutlined className="!text-xl !text-white" />,
-          key: ROUTES.reporting,
-        },
-        {
-          label: "EQSI",
-          icon: <AppstoreOutlined className="!text-xl !text-white" />,
-          key: ROUTES.eqsi,
-        },
-      ],
-    },
-  ];
-
-  const pagesItems: MenuItem[] = [
-    {
-      label: "Customers",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.customers,
-    },
-    {
-      label: "Suppliers",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.suppliers,
-    },
-    {
-      label: "Users / roles",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.userRoles,
-    },
-  ];
-
-  const quickLinksItems: MenuItem[] = [
-    {
-      label: "AI Tool",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.aiTool,
-    },
-    {
-      label: "EQS Link",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.eqsLink,
-    },
-    {
-      label: "A N Other",
-      icon: <AppstoreOutlined className="!text-xl !text-white" />,
-      key: ROUTES.anOther,
-    },
-  ];
 
   const handleMenuClick = ({ key }: { key: string }) => {
     navigate(key);
