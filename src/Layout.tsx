@@ -9,9 +9,9 @@ export const Layout = () => {
     <Space direction="vertical" className="w-full h-full min-h-screen">
       <AntdLayout>
         <Sidebar />
-        <AntdLayout className="w-full h-full bg-light p-5 lg:p-5">
+        <AntdLayout className="w-full h-full bg-light px-3 lg:px-5">
           <Header />
-          <AntdLayout.Content className="w-full h-full lg:min-h-[93vh]">
+          <AntdLayout.Content className="w-full h-full lg:min-h-[93vh] pb-3 lg:pb-5">
             <Outlet />
           </AntdLayout.Content>
         </AntdLayout>
