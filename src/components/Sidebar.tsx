@@ -116,8 +116,12 @@ export const Sidebar = () => {
         )
       }
     >
-      <div className="w-full h-full flex flex-col gap-1 lg:gap-3 p-1 lg:p-3">
-        <div className="flex justify-center my-1 gap-2 lg:gap-3">
+      <div className="w-full h-full flex flex-col gap-3 p-3">
+        <div
+          className={`flex items-center my-1 gap-2 lg:gap-3 ${
+            collapsed ? "justify-center" : "justify-start"
+          }`}
+        >
           <Logo className="!w-6 lg:!w-8" />
           {!collapsed && (
             <h3 className={`${styles.heading3} text-white`}>Waretech</h3>
