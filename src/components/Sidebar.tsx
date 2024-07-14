@@ -119,7 +119,7 @@ export const Sidebar = () => {
         <div className="flex justify-center my-1 gap-3">
           <Logo width={30} />
           {!collapsed && (
-            <p className={`${styles.heading4} text-white`}>Waretech</p>
+            <h3 className={`${styles.heading3} text-white`}>Waretech</h3>
           )}
         </div>
 
