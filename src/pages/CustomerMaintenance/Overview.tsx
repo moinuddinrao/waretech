@@ -96,7 +96,7 @@ export const Overview = () => {
         customerAccountID: customer?.ACCNO,
         customerTermsGroup: "",
         paymentTerms: "",
-        creditLimit: customer["CREDIT.LIMIT"],
+        creditLimit: customer?.["CREDIT.LIMIT"],
         customerRep: customer?.REP,
         contactName: "",
         contactNumber: customer?.PHONE,
